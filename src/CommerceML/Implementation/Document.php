@@ -30,6 +30,7 @@ class Document extends \CommerceML\Nodes\Document implements Implementation
     protected $comment;
     protected $products;
     protected $requisiteValues;
+    protected $versionNumber;
 
     use DefaultImplementation;
 
@@ -137,6 +138,11 @@ class Document extends \CommerceML\Nodes\Document implements Implementation
         return $this->requisiteValues;
     }
 
-
-
+    /**
+     * @return mixed
+     */
+    public function versionNumber (): string
+    {
+        return $this->versionNumber;
+    }
 }

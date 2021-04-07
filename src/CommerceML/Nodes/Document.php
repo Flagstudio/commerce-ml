@@ -27,6 +27,7 @@ abstract class Document extends Node implements Composite
         return [
             'id' => 'Ид',
             'number' => 'Номер',
+            'versionNumber' => 'НомерВерсии',
             'date' => 'Дата',
             'ecoOperation' => 'ХозОперация',
             'role' => 'Роль',
@@ -37,7 +38,7 @@ abstract class Document extends Node implements Composite
             'time' => 'Время',
             'comment' => 'Комментарий',
             'products' => NULL,
-            'requisiteValues' => NULL
+            'requisiteValues' => NULL,
         ];
     }
 
@@ -66,4 +67,5 @@ abstract class Document extends Node implements Composite
 
     abstract public function requisiteValues(): RequisiteValues;
 
+    abstract public function versionNumber(): string;
 }

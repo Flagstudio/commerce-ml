@@ -17,19 +17,20 @@ class Document extends \CommerceML\Implementation\Document
 {
     /**
      * Document constructor.
-     * @param $id
-     * @param $number
-     * @param $date
-     * @param $ecoOperation
-     * @param $role
-     * @param $currency
-     * @param $exchangeRate
-     * @param $sum
-     * @param $counterparties
-     * @param $time
-     * @param $comment
-     * @param $products
-     * @param $requisiteValues
+     * @param string $id
+     * @param string $number
+     * @param string $date
+     * @param string $ecoOperation
+     * @param string $role
+     * @param string $currency
+     * @param string $exchangeRate
+     * @param string $sum
+     * @param Counterparties $counterparties
+     * @param string $time
+     * @param string|null $comment
+     * @param Products $products
+     * @param RequisiteValues $requisiteValues
+     * @param string $versionNumber
      */
     public function __construct (
         string $id,
@@ -44,7 +45,9 @@ class Document extends \CommerceML\Implementation\Document
         string $time,
         ?string $comment,
         Products $products,
-        RequisiteValues $requisiteValues)
+        RequisiteValues $requisiteValues,
+        string $versionNumber
+    )
     {
         $this->id = $id;
         $this->number = $number;
@@ -59,5 +62,6 @@ class Document extends \CommerceML\Implementation\Document
         $this->comment = $comment;
         $this->products = $products;
         $this->requisiteValues = $requisiteValues;
+        $this->versionNumber = $versionNumber;
     }
 }
